@@ -86,13 +86,13 @@ module.exports = {
         // let title = req.body.name
         let a = await data.updateOne({_id : mongoose.Types.ObjectId(req.params.id)}, {$set:datax})
         if(a) {
-            res.status(200).send("success")
             console.log("success")
+            res.status(200).send("success")
         }} 
         catch(err){
+            console.log("failed");
             console.log(err)
             res.status(400).send({message : 'fail'})
-            console.log("failed");
         }
     }
 }
